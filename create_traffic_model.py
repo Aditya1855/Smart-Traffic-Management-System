@@ -11,8 +11,8 @@ from sklearn.utils.class_weight import compute_class_weight
 
 
 class_labels = ["Empty", "Low", "Medium", "High", "Traffic Jam"]
-dataset_path = "D:/vscode/Python/Final Dataset/training"
-validation_path="D:/vscode/Python/Final Dataset/validation"
+dataset_path = "Final Dataset/training"
+validation_path="Final Dataset/validation"
 
 class_counts = {label: len(os.listdir(os.path.join(dataset_path, label))) for label in class_labels}
 class_counts_list = [class_counts[label] for label in class_labels]

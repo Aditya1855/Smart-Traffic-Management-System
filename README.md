@@ -46,10 +46,7 @@ This project aims to optimize traffic signal timings at intersections using:
 ## 🚀 Getting Started
 
 1. Clone the Repository
-
-```bash
-git clone https://github.com/YOUR_USERNAME/intelligent-traffic-management.git
-cd snart-traffic-management-system
+gh repo clone Aditya1855/Smart-Traffic-Management-System
 
 2. Install dependencies
 pip install -r requirements.txt

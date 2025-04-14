@@ -6,9 +6,9 @@ import seaborn as sns
 from sklearn.metrics import classification_report, confusion_matrix
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-model = tf.keras.models.load_model("D:\\vscode\\Python\\new_traffic_model.keras")
+model = tf.keras.models.load_model("new_traffic_model.keras")
 
-test_dir = "D:/vscode/Python/Final Dataset/testing"
+test_dir = "Final Dataset/testing"
 img_size = (224, 224)
 batch_size = 32
 class_labels = ["Empty", "Low", "Medium", "High", "Traffic Jam"]

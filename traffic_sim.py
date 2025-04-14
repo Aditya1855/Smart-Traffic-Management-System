@@ -11,10 +11,10 @@ import random
 from ultralytics import YOLO
 from tensorflow.keras.models import load_model
 
-cnn_model = load_model("D:/vscode/Python/new_traffic_model.keras")
+cnn_model = load_model("new_traffic_model.keras")
 yolo_model = YOLO("yolo11m.pt")
 
-dataset_path = "D:/vscode/Python/Final Dataset/testing"
+dataset_path = "Final Dataset/testing"
 categories = ['Empty', 'Low', 'Medium', 'High', 'Traffic Jam']
 
 directions = ['North', 'East', 'South', 'West']

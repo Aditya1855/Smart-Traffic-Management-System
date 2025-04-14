@@ -1,0 +1,32 @@
+[2025-04-10 00:45:05] Green: West (Low) for 15s
+[2025-04-10 00:46:04] Green: North (Traffic Jam) for 45s
+[2025-04-10 00:46:59] Green: North (Traffic Jam) for 45s
+[2025-04-10 12:34:44] Green: West (Low) for 15s
+[2025-04-10 12:35:08] Green: East (High) for 35s
+[2025-04-10 12:35:14] Green: South (High) for 35s
+[2025-04-10 13:18:22] Green: East (Low) for 15s
+[2025-04-10 13:18:45] Green: North (High) for 35s
+[2025-04-10 13:19:23] Green: West (Low) for 15s
+[2025-04-10 13:19:58] Green: North (Low) for 15s
+[2025-04-10 13:20:10] Green: North (Traffic Jam) for 45s
+[2025-04-10 13:21:02] Green: East (High) for 35s
+[2025-04-10 13:21:45] Green: West (Traffic Jam) for 45s
+[2025-04-10 13:22:38] Green: South (Low) for 15s
+[2025-04-10 13:23:01] Green: East (Low) for 15s
+[2025-04-10 13:23:23] Green: North (High) for 35s
+[2025-04-10 13:24:06] Green: South (Traffic Jam) for 45s
+[2025-04-10 13:24:59] Green: West (High) for 35s
+[2025-04-10 13:25:42] Green: East (High) for 35s
+[2025-04-10 13:26:25] Green: West (Low) for 15s
+[2025-04-10 13:26:48] Green: South (High) for 35s
+[2025-04-10 13:27:31] Green: North (Low) for 15s
+[2025-04-10 13:27:54] Green: South (High) for 35s
+[2025-04-10 13:28:36] Green: West (Low) for 15s
+[2025-04-10 13:28:59] Green: North (Empty) for 10s
+[2025-04-10 13:29:17] Green: East (Traffic Jam) for 45s
+[2025-04-10 14:22:58] Green: South (High) for 35s
+[2025-04-10 14:23:41] Green: North (High) for 35s
+[2025-04-11 18:39:32] Green: North (Low) for 15s
+[2025-04-11 18:40:33] Green: East (High) for 35s
+[2025-04-11 18:41:28] Green: South (High) for 35s
+[2025-04-11 18:42:14] Green: North (High) for 35s

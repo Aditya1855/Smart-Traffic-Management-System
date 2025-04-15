@@ -75,8 +75,9 @@ This project is licensed under the MIT License – see the LICENSE file for deta
 
 You can download the models and database file from Google Drive using the following links:
 
-- CNN Model - (https://drive.google.com/file/d/1RPsdZvV03pNDlK9eppd2epeJROxKA9Jk/view?usp=drive_link)
+- CNN MODEL - (https://drive.google.com/file/d/1RPsdZvV03pNDlK9eppd2epeJROxKA9Jk/view?usp=drive_link)
 - YOLO MODEL - (https://drive.google.com/file/d/1YuAp_g9degw2CLluK72rrxdD-ADcWMHs/view?usp=drive_link)
+- PPO RL AGENT - (https://drive.google.com/file/d/1JAO7q7lpbFgSEGIjjSLtS2ElPM8_uyQt/view?usp=drive_link)
 - DATABASE - (https://drive.google.com/file/d/1HrVX_Vvuj3Zyqa0-xk7-y9FSDYt6LKbc/view?usp=drive_link)
 
 🙌 Acknowledgements

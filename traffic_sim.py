@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 import threading
 from collections import deque
 
-cnn_model = load_model("updated_traffic_model.keras")
+cnn_model = load_model("new_traffic_model.keras")
 yolo_model = YOLO("yolo11m.pt")
 rl_agent = PPO.load("ppo_traffic_final.zip")
 
@@ -105,13 +105,19 @@ def emergency(lane, signal):
         for l in lanes:
             update_signal(l, 'red')
     elif signal == 'green':
+        manual_control = True
         manual_label.config(text="Mode: MANUAL", fg="red")
+        update_signal(lane, 'green')
+
 
 def resume_auto():
     global manual_control, served_lanes
     manual_control = False
     served_lanes.clear()
     manual_label.config(text="Mode: AUTO", fg="green")
+    for lane in lanes:
+        update_signal(lane, 'red')
+
 
 def update_signal(lane, color):
     canvas = signal_canvases[lane]
@@ -262,6 +268,10 @@ def select_lane_based_on_priority(traffic_data, unserved_lanes):
     return sorted_lanes
 
 def update_gui():
+    if manual_control:
+        print("[INFO] Manual control is active, skipping RL decision.")
+        return
+
     traffic_data = {}
     for lane, path in lanes.items():
         level, count, display_img = analyze_lane(path)
@@ -286,15 +296,29 @@ def update_gui():
         vehicle_history[lane].append(count)
         congestion_history[lane].append(score)
 
-    highest_traffic_lane = max(traffic_data, key=lambda lane: traffic_data[lane]['score'])
+    severity_map = {"Empty": 0, "Light": 1, "Medium": 2, "High": 3, "Traffic Jam": 4}
 
-    lane_decision_count[highest_traffic_lane] += 1
+    obs = []
 
-    run_cycle(highest_traffic_lane, traffic_data[highest_traffic_lane]['level'])
+    for lane in directions:
+        obs.append(traffic_data[lane]['count'])
 
+    for lane in directions:
+        obs.append(severity_map[traffic_data[lane]['level']])
+
+    obs = np.array(obs, dtype=np.float32)  
+
+    action, _ = rl_agent.predict(obs, deterministic=True)
+    chosen_lane = directions[action]
+
+    lanes_sorted = sorted(directions, key=lambda lane: max(traffic_data[lane]['count'], traffic_data[lane]['score']), reverse=True)
+    
+    chosen_lane = lanes_sorted[0]
+    
+    lane_decision_count[chosen_lane] += 1
+
+    run_cycle(chosen_lane, traffic_data[chosen_lane]['level'])
     update_charts()
-
-
 
 last_rl_decision_time = 0
 
